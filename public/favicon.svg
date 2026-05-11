@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder favicon</title>
+  <desc id="desc">A neutral geometric placeholder favicon.</desc>
+  <rect width="128" height="128" rx="28" fill="#f3f3f3"/>
+  <rect x="32" y="32" width="64" height="64" rx="14" fill="#d9d9d9"/>
+  <path d="M42 78 58 58l14 17 10-12 18 25H42z" fill="#bfbfbf"/>
+</svg>

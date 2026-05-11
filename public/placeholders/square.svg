@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Square placeholder</title>
+  <desc id="desc">A neutral geometric square placeholder.</desc>
+  <rect width="512" height="512" fill="#f3f3f3"/>
+  <rect x="96" y="96" width="320" height="320" rx="52" fill="#dedede"/>
+  <path d="M146 344 232 240l62 74 50-58 82 88z" fill="#d2d2d2"/>
+  <circle cx="336" cy="180" r="42" fill="#ececec"/>
+</svg>

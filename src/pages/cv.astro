@@ -1,0 +1,167 @@
+---
+import { getCollection, render } from "astro:content";
+import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL;
+const handle = "@lyubmyr_rudko";
+const handleSlug = handle.slice(1);
+const profileUrl = `https://github.com/${handleSlug}`;
+const linkedInUrl = `https://www.linkedin.com/in/${handleSlug}/`;
+
+const navItems = [
+  { label: "Home", href: base },
+  { label: "Software Development", href: `${base}#software-development` },
+  { label: "Portfolio", href: `${base}#projects` },
+  { label: "Blog", href: `${base}#blog` },
+  { label: "CV", href: `${base}cv/` },
+  { label: "Contact", href: `${base}#contact` },
+];
+
+const [cv] = await getCollection("cv");
+
+if (!cv) {
+  throw new Error("Missing CV content: src/content/cv.md");
+}
+
+const { Content } = await render(cv);
+---
+
+<!doctype html>
+<html lang="en" class="bg-background">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={cv.data.description} />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <title>{cv.data.title} - CV</title>
+  </head>
+  <body class="bg-background font-sans text-foreground antialiased">
+    <main class="min-h-screen bg-background">
+      <header
+        class="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm"
+      >
+        <div class="mx-auto max-w-7xl px-6 lg:px-12">
+          <div
+            class="flex min-h-20 flex-col gap-4 py-4 md:flex-row md:items-center md:justify-between md:gap-8"
+          >
+            <a
+              class="text-lg font-medium tracking-tight text-foreground"
+              href={base}
+            >
+              Lyubomyr Rudko
+            </a>
+
+            <nav
+              aria-label="Primary navigation"
+              class="flex gap-6 overflow-x-auto pb-1 text-sm md:gap-10 md:overflow-visible md:pb-0"
+            >
+              {
+                navItems.map((item) => (
+                  <a
+                    class="shrink-0 text-muted-foreground transition-colors hover:text-foreground"
+                    href={item.href}
+                  >
+                    {item.label}
+                  </a>
+                ))
+              }
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <section class="border-b border-border py-20">
+        <div class="mx-auto max-w-7xl px-6 lg:px-12">
+          <p class="mb-4 text-sm uppercase tracking-widest text-muted-foreground">
+            Placeholder CV
+          </p>
+          <div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h1
+                class="text-5xl font-medium leading-[1.05] tracking-tight text-foreground md:text-6xl"
+              >
+                {cv.data.title}
+              </h1>
+              <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+                {cv.data.description}
+              </p>
+            </div>
+            <div class="flex flex-col gap-3 sm:flex-row">
+              <a
+                class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+                href={profileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {handle}
+              </a>
+              <a
+                class="inline-flex items-center justify-center rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:bg-secondary"
+                href={linkedInUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16">
+        <div class="mx-auto max-w-4xl px-6 lg:px-12">
+          <article
+            class="cv-content rounded-2xl border border-border bg-background p-8 shadow-sm md:p-10"
+          >
+            <Content />
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  .cv-content :global(h2) {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .cv-content :global(h2:first-child) {
+    margin-top: 0;
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .cv-content :global(h3) {
+    margin-top: 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+
+  .cv-content :global(p),
+  .cv-content :global(li) {
+    color: var(--color-muted-foreground);
+    line-height: 1.75;
+  }
+
+  .cv-content :global(p) {
+    margin-top: 0.75rem;
+  }
+
+  .cv-content :global(ul) {
+    margin-top: 0.75rem;
+    list-style: disc;
+    padding-left: 1.25rem;
+  }
+
+  .cv-content :global(a) {
+    color: var(--color-foreground);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+</style>

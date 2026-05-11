@@ -1,0 +1,42 @@
+---
+const {
+  title = "Lyubomyr Rudko",
+  description = "Lyubomyr Rudko portfolio",
+} = Astro.props;
+const handle = "@lyubmyr_rudko";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={`${import.meta.env.BASE_URL}favicon.svg`}
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href={import.meta.env.BASE_URL} class="brand">Lyubomyr Rudko</a>
+        <nav class="nav">
+          <a href={import.meta.env.BASE_URL}>Home</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page-content">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>{handle}</p>
+      </div>
+    </footer>
+  </body>
+</html>
