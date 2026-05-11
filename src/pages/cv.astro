@@ -9,6 +9,8 @@ const handle = "@lyubmyr_rudko";
 const handleSlug = handle.slice(1);
 const profileUrl = `https://github.com/${handleSlug}`;
 const linkedInUrl = "https://www.linkedin.com/in/lrudko/";
+const telegramUrl = "https://t.me/lyubomyr_rudko_work";
+const githubUrl = "https://github.com/lyubomyr-rudko";
 
 const navItems = [
   { label: "Home", href: base },
@@ -91,7 +93,7 @@ const { Content } = await render(cv);
             <div class="flex flex-col gap-3 sm:flex-row">
               <a
                 class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-                href={profileUrl}
+                href={linkedInUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
