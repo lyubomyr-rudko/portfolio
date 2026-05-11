@@ -538,4 +538,5 @@ E-commerce and CMS business solutions.
 
 - Handle: @lyubmyr_rudko
 - GitHub: https://github.com/lyubmyr_rudko
-- LinkedIn: https://www.linkedin.com/in/lyubmyr_rudko/
+- LinkedIn: https://www.linkedin.com/in/lrudko/
+- Telegram: https://t.me/lyubomyr_rudko_work

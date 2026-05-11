@@ -1,0 +1,113 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - dev
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-production:
+    if: github.ref_name == 'main' || github.ref_name == 'master'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      SITE_URL: https://lyubomyr-rudko.github.io
+      SITE_BASE: /portfolio
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build production site
+        run: npm run build
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./dist
+
+  deploy-production:
+    if: github.ref_name == 'main' || github.ref_name == 'master'
+    needs: build-production
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy production to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
+
+  build-qa:
+    if: github.ref_name == 'dev'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      SITE_URL: https://lyubomyr-rudko.github.io
+      SITE_BASE: /portfolio-qa-env
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build QA site
+        run: npm run build
+
+      - name: Upload QA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-site
+          path: ./dist
+
+  deploy-qa:
+    if: github.ref_name == 'dev'
+    needs: build-qa
+    runs-on: ubuntu-latest
+    environment:
+      name: qa
+      url: https://lyubomyr-rudko.github.io/portfolio-qa-env/
+    steps:
+      - name: Download QA artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: qa-site
+          path: ./dist
+
+      - name: Publish QA site to dedicated Pages repository
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.QA_PAGES_PAT }}
+          external_repository: ${{ vars.QA_PAGES_REPOSITORY }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
