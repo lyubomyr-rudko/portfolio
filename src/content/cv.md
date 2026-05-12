@@ -537,6 +537,6 @@ E-commerce and CMS business solutions.
 ### Contact
 
 - Handle: @lyubmyr_rudko
-- GitHub: https://github.com/lyubmyr_rudko
+- Email: [rudkolg@gmail.com](mailto:rudkolg@gmail.com)
 - LinkedIn: https://www.linkedin.com/in/lrudko/
 - Telegram: https://t.me/lyubomyr_rudko_work

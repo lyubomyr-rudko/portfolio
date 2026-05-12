@@ -8,26 +8,18 @@ const anchor = (id: string) => `${base}#${id}`;
 const placeholder = (file: string) => `${base}placeholders/${file}`;
 const photo = (file: string) => `${base}photos/${file}`;
 const handle = "@lyubmyr_rudko";
-const handleSlug = handle.slice(1);
-const profileUrl = `https://github.com/${handleSlug}`;
 const linkedInUrl = "https://www.linkedin.com/in/lrudko/";
 const telegramUrl = "https://t.me/lyubomyr_rudko_work";
-const githubUrl = "https://github.com/lyubomyr-rudko";
-const youtubeUrl = `https://www.youtube.com/${handle}`;
+const email = "rudkolg@gmail.com";
+const emailUrl = `mailto:${email}`;
+const phoneUrl = "tel:+380970480847";
 
 const navItems = [
   { label: "About", href: anchor("about") },
   { label: "Software Development", href: anchor("software-development") },
   { label: "Portfolio", href: anchor("projects") },
-  { label: "Blog", href: anchor("blog") },
   { label: "CV", href: `${base}cv/` },
   { label: "Contact", href: anchor("contact") },
-];
-
-const socialLinks = [
-  { label: "LinkedIn", href: linkedInUrl },
-  { label: "YouTube", href: youtubeUrl },
-  { label: "Profile", href: profileUrl },
 ];
 
 const stats = [
@@ -42,7 +34,7 @@ const developmentServices = [
     text: "End-to-end implementation for websites, apps, and product features",
   },
   {
-    title: "Frontend Engineering",
+    title: "Frontend Architecture",
     text: "Responsive, maintainable interfaces built with modern web tooling",
   },
   {
@@ -51,13 +43,17 @@ const developmentServices = [
   },
 ];
 
-const topics = [
+const expertiseAreas = [
   "Software Development",
+  "Team Leadership",
   "Product Engineering",
   "Technical Strategy",
   "Delivery Systems",
   "Frontend Architecture",
   "Developer Experience",
+  "Technical Mentorship",
+  "Legacy Modernization",
+  "Project Audits",
 ];
 
 const projects = [
@@ -67,7 +63,7 @@ const projects = [
     subtitle: "Visual workflow builder",
     description:
       "Contributed to a visual workflow builder for creating communication flows and automation with Twilio APIs.",
-    image: placeholder("square.svg"),
+    image: photo("twilio_studio.jpg"),
     href: "https://www.twilio.com/docs/studio",
   },
   {
@@ -76,16 +72,16 @@ const projects = [
     subtitle: "Lean collaboration platform",
     description:
       "Worked on a Lean methodology platform where users share improvement ideas, collaborate, and build community-driven knowledge.",
-    image: placeholder("square.svg"),
+    image: photo("the_lean_way.jpg"),
     href: "https://theleanway.net/",
   },
   {
     index: "03",
-    title: "Universal Review Tool",
+    title: "Assets Review Tool",
     subtitle: "Stock photography internal platform",
     description:
       "Developed an internal asset review platform supporting multiple vendors and streamlining content moderation workflows.",
-    image: placeholder("square.svg"),
+    image: photo("assets_review_tool.jpg"),
     href: "https://www.shutterstock.com/",
   },
   {
@@ -94,7 +90,7 @@ const projects = [
     subtitle: "GS1 product identification system",
     description:
       "Worked on a system for managing barcode and product identification data for the UAE market.",
-    image: placeholder("square.svg"),
+    image: photo("gs1.jpg"),
     href: "https://www.gs1.org/",
   },
   {
@@ -103,36 +99,44 @@ const projects = [
     subtitle: "AlixPartners internal applications",
     description:
       "Developed internal tools for automating financial analysis and improving operational efficiency across business workflows.",
-    image: placeholder("square.svg"),
+    image: photo("alix_partners.jpg"),
     href: "https://www.alixpartners.com/",
   },
 ];
 
-const articles = [
-  {
-    title: "Building a Portfolio with Astro",
-    date: "Draft",
-    description: `A placeholder article from ${handle}.`,
-    href: linkedInUrl,
-  },
-  {
-    title: "Notes on Technical Direction",
-    date: "Draft",
-    description: `A placeholder article from ${handle}.`,
-    href: linkedInUrl,
-  },
-  {
-    title: "Shipping Maintainable Frontends",
-    date: "Draft",
-    description: `A placeholder article from ${handle}.`,
-    href: linkedInUrl,
-  },
-];
-
 const contactLinks = [
-  { label: "LinkedIn", handle, href: linkedInUrl },
-  { label: "Telegram", handle, href: telegramUrl },
-  { label: "GitHub", handle, href: githubUrl },
+  {
+    label: "LinkedIn",
+    value: handle,
+    href: linkedInUrl,
+    valueHref: linkedInUrl,
+    external: true,
+    valueExternal: true,
+  },
+  {
+    label: "Telegram",
+    value: handle,
+    href: telegramUrl,
+    valueHref: linkedInUrl,
+    external: true,
+    valueExternal: true,
+  },
+  {
+    label: "Email",
+    value: email,
+    href: emailUrl,
+    valueHref: emailUrl,
+    external: false,
+    valueExternal: false,
+  },
+  {
+    label: "Phone",
+    value: "🇺🇦 +380 970 480 847",
+    href: phoneUrl,
+    valueHref: phoneUrl,
+    external: false,
+    valueExternal: false,
+  },
 ];
 
 const footerSocialLinks = [
@@ -235,7 +239,7 @@ const footerSocialLinks = [
                 </a>
                 <a
                   class="inline-flex items-center justify-center gap-2 rounded-full border border-border px-8 py-4 font-medium transition-colors hover:bg-secondary"
-                  href={linkedInUrl}
+                  href={telegramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -290,11 +294,11 @@ const footerSocialLinks = [
                 class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-secondary"
               >
                 <img
-                  alt="Placeholder background image"
+                  alt="Solving hard problems"
                   class="absolute inset-0 h-full w-full object-cover"
                   loading="lazy"
                   decoding="async"
-                  src={placeholder("landscape.svg")}
+                  src={photo("solving_hard_problems.jpg")}
                 />
               </div>
             </div>
@@ -303,16 +307,12 @@ const footerSocialLinks = [
               <p
                 class="text-lg leading-relaxed text-muted-foreground md:text-xl"
               >
-                Lyubomyr Rudko helps teams build and ship software with practical technical delivery,
-                product engineering, and frontend implementation. 
+                Lyubomyr Rudko is a Lead React and Full-Stack Engineer with 15+ years of commercial software development experience, specializing in application architecture, product engineering, and technical delivery. He has a proven track record of leading complex projects from concept to launch, with a focus on maintainable, scalable solutions that drive business value. 
               </p>
               <p
                 class="text-lg leading-relaxed text-muted-foreground md:text-xl"
               >
-                With over a decade of experience, Lyubomyr has contributed to
-                projects across various industries, including fintech, e-commerce,
-                and SaaS. His work focuses on creating maintainable, scalable
-                solutions that drive business value and enhance user experiences.
+                With over a decade of experience, Lyubomyr has led product team delivery for products across stock media, business consulting, e-commerce, communications, entertainment, education, and SaaS platforms. His work combines hands-on engineering with technical leadership, mentoring, stakeholder communication, Agile delivery, and a strong focus on maintainable, business-oriented solutions.
               </p>
 
               <div
@@ -419,13 +419,13 @@ const footerSocialLinks = [
             <div class="lg:col-span-7">
               <div class="rounded-2xl border border-border bg-background p-10">
                 <h3 class="mb-8 text-xl font-medium text-foreground">
-                  Topic Areas
+                  Areas of Expertise
                 </h3>
                 <div class="mb-8 flex flex-wrap gap-3">
                   {
-                    topics.map((topic) => (
+                    expertiseAreas.map((area) => (
                       <span class="rounded-full border border-border px-5 py-2.5 text-sm text-foreground transition-colors hover:border-foreground">
-                        {topic}
+                        {area}
                       </span>
                     ))
                   }
@@ -486,7 +486,7 @@ const footerSocialLinks = [
                       <span class="font-mono text-sm text-muted-foreground">
                         {project.index}
                       </span>
-                      <div class="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl">
+                      <div class="flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-xl border-2 border-border bg-secondary">
                         <img
                           alt={`${project.title} project graphic`}
                           class="h-full w-full object-cover"
@@ -532,95 +532,6 @@ const footerSocialLinks = [
         </div>
       </section>
 
-      <section id="blog" class="border-t border-border py-20">
-        <div class="mx-auto max-w-7xl px-6 lg:px-12">
-          <div
-            class="mb-16 flex flex-col gap-8 md:flex-row md:items-end md:justify-between"
-          >
-            <div>
-              <p
-                class="mb-4 text-sm uppercase tracking-widest text-muted-foreground"
-              >
-                Blog
-              </p>
-              <h2
-                class="text-4xl font-medium tracking-tight text-foreground md:text-5xl"
-              >
-                Latest Articles
-              </h2>
-            </div>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-              href={linkedInUrl}
-            >
-              Follow {handle}
-              <svg
-                aria-hidden="true"
-                class="h-4 w-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M7 7h10v10"></path>
-                <path d="M7 17 17 7"></path>
-              </svg>
-            </a>
-          </div>
-
-          <div class="grid gap-6 md:grid-cols-3">
-            {
-              articles.map((article) => (
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="group block rounded-2xl border border-border p-8 transition-all duration-300 hover:border-foreground"
-                  href={article.href}
-                >
-                  <div class="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
-                    <span>{article.date}</span>
-                  </div>
-                  <h3 class="mb-3 line-clamp-2 text-xl font-medium text-foreground underline-offset-4 group-hover:underline">
-                    {article.title}
-                  </h3>
-                  <p class="line-clamp-3 text-sm text-muted-foreground">
-                    {article.description}
-                  </p>
-                </a>
-              ))
-            }
-          </div>
-
-          <div class="mt-12 text-center">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-foreground underline-offset-4 hover:underline"
-              href={linkedInUrl}
-            >
-              Open {handle}
-              <svg
-                aria-hidden="true"
-                class="h-4 w-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M7 7h10v10"></path>
-                <path d="M7 17 17 7"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <section id="contact" class="border-t border-border py-20">
         <div class="mx-auto max-w-7xl px-6 lg:px-12">
           <div class="grid gap-16 lg:grid-cols-12">
@@ -636,9 +547,7 @@ const footerSocialLinks = [
                 Get in Touch and Hire
               </h2>
               <p class="mb-8 text-lg leading-relaxed text-muted-foreground">
-                Hire Lyubomyr Rudko for software development work, product
-                engineering, and frontend delivery. Public references and
-                outbound links point to{" "}
+                Hire Lyubomyr Rudko for software development, new product analysis, architecture consulting, technical team leadership, and project audits. I help businesses turn complex ideas and legacy systems into clear, scalable, and maintainable software solutions. Whether you need hands-on development, technical direction, or an expert review of your project, I can help you move faster with confidence. Contact me to discuss how I can support your next project.
                 <a
                   class="text-foreground underline-offset-4 hover:underline"
                   href={linkedInUrl}
@@ -652,7 +561,7 @@ const footerSocialLinks = [
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 font-medium text-primary-foreground transition-opacity hover:opacity-90"
-                href={linkedInUrl}
+                href={telegramUrl}
               >
                 Hire {handle}
                 <svg
@@ -687,27 +596,27 @@ const footerSocialLinks = [
                         <a
                           class="font-medium text-foreground underline-offset-4 hover:underline"
                           href={link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          target={link.external ? "_blank" : undefined}
+                          rel={link.external ? "noopener noreferrer" : undefined}
                         >
                           {link.label}
                         </a>
                         <p class="text-sm text-muted-foreground">
                           <a
                             class="underline-offset-4 hover:text-foreground hover:underline"
-                            href={linkedInUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href={link.valueHref}
+                            target={link.valueExternal ? "_blank" : undefined}
+                            rel={link.valueExternal ? "noopener noreferrer" : undefined}
                           >
-                            {link.handle}
+                            {link.value}
                           </a>
                         </p>
                       </div>
                       <a
                         aria-label={`Open ${link.label}`}
                         href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        target={link.external ? "_blank" : undefined}
+                        rel={link.external ? "noopener noreferrer" : undefined}
                       >
                         <svg
                           aria-hidden="true"
