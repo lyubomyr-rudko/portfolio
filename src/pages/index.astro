@@ -5,7 +5,6 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const anchor = (id: string) => `${base}#${id}`;
-const placeholder = (file: string) => `${base}placeholders/${file}`;
 const photo = (file: string) => `${base}photos/${file}`;
 const handle = "@lyubmyr_rudko";
 const linkedInUrl = "https://www.linkedin.com/in/lrudko/";
@@ -16,44 +15,45 @@ const phoneUrl = "tel:+380970480847";
 
 const navItems = [
   { label: "About", href: anchor("about") },
-  { label: "Software Development", href: anchor("software-development") },
-  { label: "Portfolio", href: anchor("projects") },
+  { label: "Services", href: anchor("software-development") },
+  { label: "Work", href: anchor("projects") },
   { label: "CV", href: `${base}cv/` },
   { label: "Contact", href: anchor("contact") },
 ];
 
 const stats = [
-  { index: "01", value: "Build", label: "Software Development" },
-  { index: "02", value: "Ship", label: "Product Engineering" },
-  { index: "03", value: "Hire", label: handle, href: linkedInUrl },
+  { index: "01", value: "15+", label: "Years of Experience" },
+  { index: "02", value: "Lead", label: "Full-Stack Engineering" },
+  { index: "03", value: "Ship", label: "Business-Critical Products" },
 ];
 
 const developmentServices = [
   {
-    title: "Software Development",
-    text: "End-to-end implementation for websites, apps, and product features",
+    title: "Full-Stack Development",
+    text: "Scalable web applications, internal tools, APIs, and product features",
   },
   {
     title: "Frontend Architecture",
-    text: "Responsive, maintainable interfaces built with modern web tooling",
+    text: "Maintainable TypeScript and React interfaces built for real users",
   },
   {
-    title: "Technical Delivery",
-    text: "Practical planning, architecture, and execution support",
+    title: "Technical Leadership",
+    text: "Architecture, planning, mentorship, delivery ownership, and codebase direction",
   },
 ];
 
 const expertiseAreas = [
-  "Software Development",
-  "Team Leadership",
+  "Full-Stack Development",
+  "Python",
+  "TypeScript",
+  "React",
   "Product Engineering",
-  "Technical Strategy",
-  "Delivery Systems",
-  "Frontend Architecture",
+  "System Architecture",
+  "Team Leadership",
+  "Delivery Ownership",
+  "Codebase Modernization",
   "Developer Experience",
-  "Technical Mentorship",
-  "Legacy Modernization",
-  "Project Audits",
+  "Technical Audits",
 ];
 
 const projects = [
@@ -62,7 +62,7 @@ const projects = [
     title: "Twilio Studio",
     subtitle: "Visual workflow builder",
     description:
-      "Contributed to a visual workflow builder for creating communication flows and automation with Twilio APIs.",
+      "Contributed to a visual workflow editor for designing communication flows and automation powered by Twilio APIs.",
     image: photo("twilio_studio.jpg"),
     href: "https://www.twilio.com/docs/studio",
   },
@@ -71,25 +71,25 @@ const projects = [
     title: "The Lean Way",
     subtitle: "Lean collaboration platform",
     description:
-      "Worked on a Lean methodology platform where users share improvement ideas, collaborate, and build community-driven knowledge.",
+      "Worked on a collaboration platform for Lean improvement ideas, knowledge sharing, and community-driven continuous improvement.",
     image: photo("the_lean_way.jpg"),
     href: "https://theleanway.net/",
   },
   {
     index: "03",
-    title: "Assets Review Tool",
-    subtitle: "Stock photography internal platform",
+    title: "Asset Review Platform",
+    subtitle: "Shutterstock internal review system",
     description:
-      "Developed an internal asset review platform supporting multiple vendors and streamlining content moderation workflows.",
+      "Developed internal tooling for multi-vendor asset review, moderation queues, and content operations workflows.",
     image: photo("assets_review_tool.jpg"),
     href: "https://www.shutterstock.com/",
   },
   {
     index: "04",
     title: "Numberbank",
-    subtitle: "GS1 product identification system",
+    subtitle: "GS1 product identification platform",
     description:
-      "Worked on a system for managing barcode and product identification data for the UAE market.",
+      "Worked on barcode and product identification workflows used to manage structured product data for the UAE market.",
     image: photo("gs1.jpg"),
     href: "https://www.gs1.org/",
   },
@@ -98,7 +98,7 @@ const projects = [
     title: "Financial Automation Tools",
     subtitle: "AlixPartners internal applications",
     description:
-      "Developed internal tools for automating financial analysis and improving operational efficiency across business workflows.",
+      "Built internal applications that automated financial analysis workflows and improved operational efficiency for consulting teams.",
     image: photo("alix_partners.jpg"),
     href: "https://www.alixpartners.com/",
   },
@@ -152,10 +152,10 @@ const footerSocialLinks = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content={`Hire Lyubomyr Rudko for software development. Portfolio, projects, writing, and public links for ${handle}.`}
+      content="Lead Full-Stack Engineer with 15+ years of experience building scalable products, internal platforms, and enterprise software."
     />
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
-    <title>Lyubomyr Rudko - Software Development Portfolio</title>
+    <title>Lyubomyr Rudko - Lead Full-Stack Engineer</title>
   </head>
   <body class="bg-background font-sans text-foreground antialiased">
     <main class="min-h-screen bg-background">
@@ -200,7 +200,7 @@ const footerSocialLinks = [
                 <p
                   class="text-sm uppercase tracking-widest text-muted-foreground"
                 >
-                  Lead Full Stack Engineer
+                  Lead Full-Stack Engineer
                 </p>
                 <h1
                   class="text-5xl font-medium leading-[1.05] tracking-tight text-foreground md:text-6xl lg:text-7xl xl:text-8xl"
@@ -212,9 +212,10 @@ const footerSocialLinks = [
               <p
                 class="max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl"
               >
-                Lyubomyr Rudko offers expertise across software development, product
-                engineering, team leadership and practical technical delivery. Get in touch
-                through <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+                I help teams design, build, and ship scalable web applications,
+                internal platforms, and business-critical software. My work
+                combines hands-on Python and TypeScript engineering with
+                architecture, team leadership, and delivery ownership.
               </p>
 
               <div class="flex flex-col gap-4 pt-4 sm:flex-row">
@@ -222,7 +223,7 @@ const footerSocialLinks = [
                   class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 font-medium text-primary-foreground transition-opacity hover:opacity-90"
                   href={anchor("contact")}
                 >
-                  Get in Touch
+                  Start a Conversation
                   <svg
                     aria-hidden="true"
                     class="h-[18px] w-[18px]"
@@ -265,9 +266,9 @@ const footerSocialLinks = [
                 <div
                   class="absolute -bottom-6 -left-4 rounded-xl border border-border bg-background px-6 py-4 shadow-sm sm:-left-6"
                 >
-                  <p class="text-sm text-muted-foreground">Currently</p>
+                  <p class="text-sm text-muted-foreground">Availability</p>
                   <p class="font-medium text-foreground">
-                    <strong>Open for hire</strong>
+                    <strong>Open for projects</strong>
                   </p>
                 </div>
               </div>
@@ -288,7 +289,7 @@ const footerSocialLinks = [
               <h2
                 class="mb-10 text-4xl font-medium tracking-tight text-foreground md:text-5xl"
               >
-                Background
+                Engineering Background
               </h2>
               <div
                 class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-secondary"
@@ -307,12 +308,20 @@ const footerSocialLinks = [
               <p
                 class="text-lg leading-relaxed text-muted-foreground md:text-xl"
               >
-                Lyubomyr Rudko is a Lead React and Full-Stack Engineer with 15+ years of commercial software development experience, specializing in application architecture, product engineering, and technical delivery. He has a proven track record of leading complex projects from concept to launch, with a focus on maintainable, scalable solutions that drive business value. 
+                I am a Lead Full-Stack Engineer with 15+ years of commercial
+                experience building web platforms, internal enterprise tools,
+                and business-critical applications. My core stack is Python and
+                TypeScript, with deep ownership across architecture, frontend
+                systems, backend services, and product delivery.
               </p>
               <p
                 class="text-lg leading-relaxed text-muted-foreground md:text-xl"
               >
-                With over a decade of experience, Lyubomyr has led product team delivery for products across stock media, business consulting, e-commerce, communications, entertainment, education, and SaaS platforms. His work combines hands-on engineering with technical leadership, mentoring, stakeholder communication, Agile delivery, and a strong focus on maintainable, business-oriented solutions.
+                I have worked across communications, stock media, consulting,
+                product identification, e-commerce, education, entertainment,
+                and SaaS. My role often combines hands-on engineering, team
+                leadership, stakeholder communication, mentoring, and delivery
+                ownership for complex products.
               </p>
 
               <div
@@ -359,26 +368,18 @@ const footerSocialLinks = [
               <p
                 class="mb-4 text-sm uppercase tracking-widest text-muted-foreground"
               >
-                Software Development
+                Services
               </p>
               <h2
                 class="mb-8 text-4xl font-medium tracking-tight text-foreground md:text-5xl"
               >
-                Hire Lyubomyr
+                Software Development and Technical Leadership
               </h2>
               <p class="mb-12 text-lg leading-relaxed text-muted-foreground">
-                Get in touch to hire{" "}
-                <a
-                  class="text-foreground underline-offset-4 hover:underline"
-                  href={linkedInUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {handle}
-                </a>{" "}
-                for software development,
-                frontend implementation, product engineering, and practical
-                delivery support.
+                I support teams that need senior engineering ownership:
+                building new products, modernizing existing systems, improving
+                architecture, and helping delivery teams ship with less
+                friction.
               </p>
 
               <div class="space-y-6">
@@ -436,7 +437,7 @@ const footerSocialLinks = [
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Get in touch to hire {handle}
+                  Discuss a project on LinkedIn
                   <svg
                     aria-hidden="true"
                     class="h-4 w-4"
@@ -463,12 +464,12 @@ const footerSocialLinks = [
             <p
               class="mb-4 text-sm uppercase tracking-widest text-muted-foreground"
             >
-              Product Work
+              Selected Work
             </p>
             <h2
               class="text-4xl font-medium tracking-tight text-foreground md:text-5xl"
             >
-              Selected Products
+              Selected Product and Platform Work
             </h2>
           </div>
 
@@ -544,18 +545,13 @@ const footerSocialLinks = [
               <h2
                 class="mb-8 text-4xl font-medium tracking-tight text-foreground md:text-5xl"
               >
-                Get in Touch and Hire
+                Work With Me
               </h2>
               <p class="mb-8 text-lg leading-relaxed text-muted-foreground">
-                Hire Lyubomyr Rudko for software development, new product analysis, architecture consulting, technical team leadership, and project audits. I help businesses turn complex ideas and legacy systems into clear, scalable, and maintainable software solutions. Whether you need hands-on development, technical direction, or an expert review of your project, I can help you move faster with confidence. Contact me to discuss how I can support your next project.
-                <a
-                  class="text-foreground underline-offset-4 hover:underline"
-                  href={linkedInUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {handle}
-                </a>.
+                Hire me for full-stack development, product architecture,
+                technical leadership, codebase audits, or modernization work. I
+                help teams turn complex ideas and legacy systems into clear,
+                scalable, maintainable software.
               </p>
               <a
                 target="_blank"
@@ -584,7 +580,7 @@ const footerSocialLinks = [
               <h3
                 class="mb-8 text-sm uppercase tracking-widest text-muted-foreground"
               >
-                Find Me Online
+                Contact Channels
               </h3>
               <div class="space-y-2">
                 {
