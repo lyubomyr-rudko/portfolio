@@ -20,6 +20,7 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   : `${import.meta.env.BASE_URL}/`;
 const photo = (file: string) => `${base}photos/${file}`;
 const projectIndexHref = `${base}#projects`;
+const projectContextHref = "#project-context";
 const handle = "@lyubmyr_rudko";
 const linkedInUrl = "https://www.linkedin.com/in/lrudko/";
 const telegramUrl = "https://t.me/lyubomyr_rudko_work";
@@ -230,9 +231,9 @@ const renderedDetailSections = project.detailSections ?? defaultDetailSections;
               <div class="flex flex-col gap-3 sm:flex-row">
                 <a
                   class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-                  href={projectIndexHref}
+                  href={projectContextHref}
                 >
-                  Back to Selected Projects
+                  Read more...
                 </a>
                 <a
                   class="inline-flex items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:bg-secondary"
@@ -320,7 +321,14 @@ const renderedDetailSections = project.detailSections ?? defaultDetailSections;
             <div class="space-y-6 lg:col-span-8">
               {
                 renderedDetailSections.map((section) => (
-                  <section class="rounded-2xl border border-border bg-background p-8">
+                  <section
+                    id={
+                      section.title === "Project Context"
+                        ? "project-context"
+                        : undefined
+                    }
+                    class="scroll-mt-28 rounded-2xl border border-border bg-background p-8"
+                  >
                     <div class="mb-6 flex items-center gap-4">
                       <span class="font-mono text-sm text-muted-foreground">
                         {section.index}

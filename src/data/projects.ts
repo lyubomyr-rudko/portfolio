@@ -278,6 +278,175 @@ export const projects: Project[] = [
   },
   {
     index: "02",
+    slug: "hero-transformation",
+    title: "HERO Transformation",
+    subtitle: "Enterprise transformation framework and playbook",
+    description:
+      "Worked on a practical enterprise transformation framework, playbook, and resource set focused on value-driven large-scale change.",
+    imageFile: "hero_transformation.svg",
+    externalUrl: "https://www.linkedin.com/company/herotransformation/",
+    referenceLabel: "HERO Transformation LinkedIn",
+    heroParagraphs: [
+      "HERO Transformation is a practical framework and playbook for delivering large-scale enterprise change with measurable value at the center. The public materials position it as a step-by-step approach for leaders and teams planning, governing, and delivering complex transformation programs.",
+      "The project brings together transformation methodology, governance patterns, reusable templates, and executive-facing guidance for organizations that need to move beyond activity tracking and manage change around outcomes, value, and disciplined delivery.",
+    ],
+    detailSections: [
+      {
+        index: "01",
+        title: "Project Context",
+        paragraphs: [
+          "Enterprise transformation programs often struggle when the work is organized around visible activity rather than measurable business value. HERO Transformation addresses that problem by framing change around outcomes, value creation, clear governance, and practical delivery discipline.",
+          "The public HERO materials describe the framework as a playbook for effective enterprise value creation through change. The site presents the work from authors Arif Harbott and Cuan Mulligan, who position it as a practitioner-built guide for organizations running high-stakes transformation efforts.",
+          "Background material on the framework describes it as codified experience from years of large transformation delivery, including work across more than $1bn of transformations. That framing makes the product more practical than conceptual: it is designed to help teams run transformation work with clearer roles, processes, meetings, governance, and templates.",
+          "The framework emphasizes that value must stay central at every step. Instead of treating transformation as a high-level change narrative, it focuses on the operational mechanics needed to define outcomes, design the work, manage initiatives, remove blockers, and sustain accountability.",
+        ],
+      },
+      {
+        index: "02",
+        title: "Product and Framework Scope",
+        paragraphs: [
+          "The HERO Transformation project combines a book, public web presence, reusable transformation templates, and a structured methodology for planning and delivering change programs.",
+          "The framework is organized around core transformation concepts including the transformation outcome, transformation design, and transformation delivery. These areas help teams connect the target business result to the plan, governance model, resources, risks, and delivery cadence required to achieve it.",
+        ],
+        items: [
+          "Transformation outcome definition and current-state context",
+          "Business case, budget, investment ratio, and value framing",
+          "Transformation design across workstreams, initiatives, resources, teams, and capability",
+          "Delivery governance, accountability, blockers, risks, and stakeholder management",
+          "Reusable templates for statements, plans, initiatives, and blocker tracking",
+          "Guidance for executive sponsors, transformation leaders, delivery teams, and advisors",
+        ],
+      },
+      {
+        index: "03",
+        title: "Audience and Use Cases",
+        paragraphs: [
+          "The materials are designed for leaders and practitioners responsible for enterprise-scale change. The audience includes executives commissioning transformations, transformation leaders accountable for outcomes, and consultants or team leaders supporting delivery.",
+          "HERO is especially relevant for organizations that need to make difficult, value-focused changes rather than only the changes that are easiest to implement. The framework is also positioned as useful when an existing change effort is failing and needs clearer measurement, prioritization, and delivery control.",
+        ],
+        items: [
+          "C-suite executives sponsoring or funding transformation initiatives",
+          "CIOs and transformation leaders responsible for operating-model or technology change",
+          "Delivery leads coordinating workstreams, initiatives, teams, risks, and blockers",
+          "Consultants and advisors facilitating complex change programs",
+          "Organizations that need a practical mechanism to measure, direct, and track value",
+        ],
+      },
+      {
+        index: "04",
+        title: "Key Challenges",
+        subsections: [
+          {
+            title: "Turning Methodology Into Practical Tools",
+            paragraphs: [
+              "A transformation framework only works if teams can apply it in real operating conditions. HERO needed to connect executive-level concepts such as enterprise value, outcomes, and business cases to concrete templates and repeatable delivery practices.",
+            ],
+          },
+          {
+            title: "Balancing Strategy and Delivery",
+            paragraphs: [
+              "The project had to bridge strategic transformation design with the daily delivery mechanics of initiatives, workstreams, risks, resources, governance, and blockers. That balance is important because large transformation programs fail when planning and execution drift apart.",
+            ],
+          },
+          {
+            title: "Keeping Value Visible",
+            paragraphs: [
+              "A central challenge in enterprise change is keeping teams focused on value instead of activity. HERO addresses this by repeatedly tying work back to measurable outcomes, business cases, ROI, and the transformation bridge from current performance to target performance.",
+            ],
+          },
+        ],
+      },
+      {
+        index: "05",
+        title: "Engineering and Content Decisions",
+        paragraphs: [
+          "The project required a clear information architecture for a methodology-heavy product: explain the value proposition quickly, make the framework approachable, and give practitioners enough structure to act on it.",
+        ],
+        items: [
+          "Positioning the product around measurable enterprise value rather than generic change management",
+          "Separating the framework into outcome, design, and delivery concepts",
+          "Creating reusable assets that turn abstract transformation language into applied working documents",
+          "Making the content usable for both executive sponsors and delivery practitioners",
+          "Supporting a resource model that can extend from the public site into books, templates, and advisory materials",
+        ],
+        subsections: [
+          {
+            title: "Reusable Resource Model",
+            paragraphs: [
+              "The publicly available templates show how the framework becomes operational: teams can document a transformation statement, plan the transformation, define initiatives, and track blockers using a consistent structure.",
+            ],
+          },
+        ],
+      },
+      {
+        index: "06",
+        title: "Outcome and Impact",
+        paragraphs: [
+          "HERO Transformation presents a practical, value-focused operating model for enterprise change. It gives transformation leaders a structured way to define outcomes, plan the work, manage governance, and keep delivery tied to measurable business value.",
+          "The project turns practitioner experience into a reusable framework and resource set that can support executive alignment, team coordination, transformation planning, and disciplined delivery across complex programs.",
+        ],
+        items: [
+          "Clearer transformation narrative for leaders and teams",
+          "Reusable templates for planning, initiative definition, and blocker management",
+          "A framework for connecting current context, target performance, and enterprise value increase",
+          "Better alignment between strategic transformation goals and delivery execution",
+          "A public knowledge product supporting books, resources, and transformation advisory work",
+        ],
+      },
+    ],
+    skills: [
+      "Enterprise transformation",
+      "Product positioning",
+      "Content architecture",
+      "Framework design",
+      "Business value mapping",
+      "Governance modeling",
+      "Stakeholder alignment",
+      "Transformation planning",
+      "Reusable template systems",
+      "Executive communication",
+      "Delivery operations",
+      "Systems thinking",
+    ],
+    pageBlocks: [
+      {
+        title: "Project Summary Card",
+        text: "Enterprise transformation framework and playbook for planning, governing, and delivering large-scale change with measurable value at the center.",
+      },
+      {
+        title: "What I Worked On",
+        items: [
+          "Transformation framework structure",
+          "Value-focused product narrative",
+          "Reusable transformation resource model",
+          "Project and initiative planning concepts",
+          "Audience framing for executives, leaders, and consultants",
+          "Content architecture for methodology-heavy materials",
+        ],
+      },
+      {
+        title: "Framework Highlights",
+        items: [
+          "Transformation outcome definition",
+          "Transformation design and planning",
+          "Delivery governance and blocker tracking",
+          "Business case and value mapping",
+          "Workstream, resource, stakeholder, and risk structure",
+          "Templates for repeatable transformation execution",
+        ],
+      },
+      {
+        title: "Lessons Learned",
+        text: "A transformation framework becomes useful when it turns strategic intent into concrete operating mechanisms. The strongest materials connect executive outcomes, delivery governance, reusable templates, and day-to-day decision making.",
+      },
+      {
+        title: "Next Project Transition",
+        text: "Explore another project focused on workflow systems, collaboration platforms, or operational tooling for complex business processes.",
+      },
+    ],
+  },
+  {
+    index: "03",
     slug: "the-lean-way",
     title: "The Lean Way",
     subtitle: "Lean collaboration platform",
@@ -288,7 +457,7 @@ export const projects: Project[] = [
     referenceLabel: "The Lean Way website",
   },
   {
-    index: "03",
+    index: "04",
     slug: "asset-review-platform",
     title: "Asset Review Platform",
     subtitle: "Shutterstock internal review system",
@@ -299,7 +468,7 @@ export const projects: Project[] = [
     referenceLabel: "Shutterstock website",
   },
   {
-    index: "04",
+    index: "05",
     slug: "numberbank",
     title: "Numberbank",
     subtitle: "GS1 product identification platform",
@@ -310,7 +479,7 @@ export const projects: Project[] = [
     referenceLabel: "GS1 website",
   },
   {
-    index: "05",
+    index: "06",
     slug: "financial-automation-tools",
     title: "Financial Automation Tools",
     subtitle: "AlixPartners internal applications",
