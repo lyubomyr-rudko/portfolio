@@ -1,4 +1,5 @@
 ---
+import { projects } from "../data/projects";
 import "../styles/global.css";
 
 const base = import.meta.env.BASE_URL.endsWith("/")
@@ -16,7 +17,7 @@ const phoneUrl = "tel:+380970480847";
 const navItems = [
   { label: "About", href: anchor("about") },
   { label: "Services", href: anchor("software-development") },
-  { label: "Work", href: anchor("projects") },
+  { label: "Projects", href: anchor("projects") },
   { label: "CV", href: `${base}cv/` },
   { label: "Contact", href: anchor("contact") },
 ];
@@ -49,59 +50,12 @@ const expertiseAreas = [
   "React",
   "Product Engineering",
   "System Architecture",
+  "AWS Cloud Architecture",
   "Team Leadership",
   "Delivery Ownership",
   "Codebase Modernization",
   "Developer Experience",
   "Technical Audits",
-];
-
-const projects = [
-  {
-    index: "01",
-    title: "Twilio Studio",
-    subtitle: "Visual workflow builder",
-    description:
-      "Contributed to a visual workflow editor for designing communication flows and automation powered by Twilio APIs.",
-    image: photo("twilio_studio.jpg"),
-    href: "https://www.twilio.com/docs/studio",
-  },
-  {
-    index: "02",
-    title: "The Lean Way",
-    subtitle: "Lean collaboration platform",
-    description:
-      "Worked on a collaboration platform for Lean improvement ideas, knowledge sharing, and community-driven continuous improvement.",
-    image: photo("the_lean_way.jpg"),
-    href: "https://theleanway.net/",
-  },
-  {
-    index: "03",
-    title: "Asset Review Platform",
-    subtitle: "Shutterstock internal review system",
-    description:
-      "Developed internal tooling for multi-vendor asset review, moderation queues, and content operations workflows.",
-    image: photo("assets_review_tool.jpg"),
-    href: "https://www.shutterstock.com/",
-  },
-  {
-    index: "04",
-    title: "Numberbank",
-    subtitle: "GS1 product identification platform",
-    description:
-      "Worked on barcode and product identification workflows used to manage structured product data for the UAE market.",
-    image: photo("gs1.jpg"),
-    href: "https://www.gs1.org/",
-  },
-  {
-    index: "05",
-    title: "Financial Automation Tools",
-    subtitle: "AlixPartners internal applications",
-    description:
-      "Built internal applications that automated financial analysis workflows and improved operational efficiency for consulting teams.",
-    image: photo("alix_partners.jpg"),
-    href: "https://www.alixpartners.com/",
-  },
 ];
 
 const contactLinks = [
@@ -247,8 +201,6 @@ const footerSocialLinks = [
                   Hire {handle}
                 </a>
               </div>
-
-              
             </div>
 
             <div class="lg:col-span-5">
@@ -268,7 +220,7 @@ const footerSocialLinks = [
                 >
                   <p class="text-sm text-muted-foreground">Availability</p>
                   <p class="font-medium text-foreground">
-                    <strong>Open for projects</strong>
+                    <strong>Open for contract work</strong>
                   </p>
                 </div>
               </div>
@@ -321,7 +273,9 @@ const footerSocialLinks = [
                 product identification, e-commerce, education, entertainment,
                 and SaaS. My role often combines hands-on engineering, team
                 leadership, stakeholder communication, mentoring, and delivery
-                ownership for complex products.
+                ownership for complex products. I am also an AWS Certified
+                Solutions Architect - Associate, with a practical focus on
+                scalable and resilient cloud architecture.
               </p>
 
               <div
@@ -376,8 +330,8 @@ const footerSocialLinks = [
                 Software Development and Technical Leadership
               </h2>
               <p class="mb-12 text-lg leading-relaxed text-muted-foreground">
-                I support teams that need senior engineering ownership:
-                building new products, modernizing existing systems, improving
+                I support teams that need senior engineering ownership: building
+                new products, modernizing existing systems, improving
                 architecture, and helping delivery teams ship with less
                 friction.
               </p>
@@ -464,12 +418,12 @@ const footerSocialLinks = [
             <p
               class="mb-4 text-sm uppercase tracking-widest text-muted-foreground"
             >
-              Selected Work
+              Selected Projects
             </p>
             <h2
               class="text-4xl font-medium tracking-tight text-foreground md:text-5xl"
             >
-              Selected Product and Platform Work
+              Selected Projects
             </h2>
           </div>
 
@@ -477,10 +431,8 @@ const footerSocialLinks = [
             {
               projects.map((project) => (
                 <a
-                  target="_blank"
-                  rel="noopener noreferrer"
                   class="group block rounded-2xl border border-border bg-background p-8 transition-all duration-300 hover:border-foreground"
-                  href={project.href}
+                  href={`${base}projects/${project.slug}/`}
                 >
                   <div class="flex flex-col gap-6 md:flex-row md:items-start">
                     <div class="flex items-center gap-4">
@@ -493,7 +445,7 @@ const footerSocialLinks = [
                           class="h-full w-full object-cover"
                           loading="lazy"
                           decoding="async"
-                          src={project.image}
+                          src={photo(project.imageFile)}
                         />
                       </div>
                     </div>
@@ -517,8 +469,8 @@ const footerSocialLinks = [
                           stroke-linecap="round"
                           stroke-linejoin="round"
                         >
-                          <path d="M7 7h10v10"></path>
-                          <path d="M7 17 17 7"></path>
+                          <path d="M7 7h10v10" />
+                          <path d="M7 17 17 7" />
                         </svg>
                       </div>
                       <p class="max-w-2xl text-muted-foreground">
@@ -585,15 +537,15 @@ const footerSocialLinks = [
               <div class="space-y-2">
                 {
                   contactLinks.map((link) => (
-                    <div
-                      class="group flex items-center justify-between rounded-xl border border-border p-6 transition-all hover:border-foreground"
-                    >
+                    <div class="group flex items-center justify-between rounded-xl border border-border p-6 transition-all hover:border-foreground">
                       <div>
                         <a
                           class="font-medium text-foreground underline-offset-4 hover:underline"
                           href={link.href}
                           target={link.external ? "_blank" : undefined}
-                          rel={link.external ? "noopener noreferrer" : undefined}
+                          rel={
+                            link.external ? "noopener noreferrer" : undefined
+                          }
                         >
                           {link.label}
                         </a>
@@ -602,7 +554,11 @@ const footerSocialLinks = [
                             class="underline-offset-4 hover:text-foreground hover:underline"
                             href={link.valueHref}
                             target={link.valueExternal ? "_blank" : undefined}
-                            rel={link.valueExternal ? "noopener noreferrer" : undefined}
+                            rel={
+                              link.valueExternal
+                                ? "noopener noreferrer"
+                                : undefined
+                            }
                           >
                             {link.value}
                           </a>
@@ -624,8 +580,8 @@ const footerSocialLinks = [
                           stroke-linecap="round"
                           stroke-linejoin="round"
                         >
-                          <path d="M7 7h10v10"></path>
-                          <path d="M7 17 17 7"></path>
+                          <path d="M7 7h10v10" />
+                          <path d="M7 17 17 7" />
                         </svg>
                       </a>
                     </div>
