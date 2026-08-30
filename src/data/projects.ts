@@ -460,12 +460,12 @@ export const projects: Project[] = [
     index: "04",
     slug: "asset-review-platform",
     title: "Asset Review Platform",
-    subtitle: "Shutterstock internal review system",
+    subtitle: "Stock photography internal review system",
     description:
       "Developed internal tooling for multi-vendor asset review, moderation queues, and content operations workflows.",
     imageFile: "assets_review_tool.jpg",
-    externalUrl: "https://www.shutterstock.com/",
-    referenceLabel: "Shutterstock website",
+    externalUrl: "under-nda",
+    referenceLabel: "Stock photography website",
   },
   {
     index: "05",
