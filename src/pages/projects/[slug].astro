@@ -35,53 +35,6 @@ const navItems = [
   { label: "Contact", href: "#contact" },
 ];
 
-const defaultDetailSections = [
-  {
-    index: "01",
-    title: "Project Context",
-    paragraphs: [
-      "Add the product background, audience, business goal, and the situation before the work began.",
-    ],
-  },
-  {
-    index: "02",
-    title: "Role and Responsibilities",
-    paragraphs: [
-      "Describe ownership, collaboration model, delivery responsibilities, and the parts of the system directly influenced.",
-    ],
-  },
-  {
-    index: "03",
-    title: "Technical Scope",
-    paragraphs: [
-      "Document the architecture, integrations, data flows, APIs, frontend patterns, backend services, and platform constraints.",
-    ],
-  },
-  {
-    index: "04",
-    title: "Challenges and Decisions",
-    paragraphs: [
-      "Capture the hardest tradeoffs, constraints, technical risks, and the reasoning behind major implementation decisions.",
-    ],
-  },
-  {
-    index: "05",
-    title: "Outcome and Impact",
-    paragraphs: [
-      "Add launch details, workflow improvements, performance changes, operational impact, adoption, or other measurable results.",
-    ],
-  },
-];
-
-const writingPrompts = [
-  "What problem did the project solve for users or the business?",
-  "Which features, workflows, or systems were in scope?",
-  "What was the engineering role and level of ownership?",
-  "Which technical constraints shaped the implementation?",
-  "What changed after the work shipped?",
-  "Which screenshots, diagrams, or links should support the story?",
-];
-
 const contactLinks = [
   {
     label: "LinkedIn",
@@ -123,7 +76,7 @@ const footerSocialLinks = [
 ];
 
 const heroParagraphs = project.heroParagraphs ?? [project.description];
-const renderedDetailSections = project.detailSections ?? defaultDetailSections;
+const renderedDetailSections = project.detailSections ?? [];
 ---
 
 <!doctype html>
@@ -297,23 +250,7 @@ const renderedDetailSections = project.detailSections ?? defaultDetailSections;
                         ))}
                       </ul>
                     </>
-                  ) : (
-                    <>
-                      <p class="mb-4 text-sm uppercase tracking-widest text-muted-foreground">
-                        Description Guide
-                      </p>
-                      <h2 class="text-2xl font-medium tracking-tight text-foreground">
-                        Content to Add
-                      </h2>
-                      <ul class="mt-6 space-y-3 text-sm leading-relaxed text-muted-foreground">
-                        {writingPrompts.map((prompt) => (
-                          <li class="border-t border-border pt-3 first:border-t-0 first:pt-0">
-                            {prompt}
-                          </li>
-                        ))}
-                      </ul>
-                    </>
-                  )
+                  ) : null
                 }
               </div>
             </aside>
@@ -381,10 +318,10 @@ const renderedDetailSections = project.detailSections ?? defaultDetailSections;
                   <section class="rounded-2xl border border-border bg-secondary p-8">
                     <div class="mb-8">
                       <p class="mb-4 text-sm uppercase tracking-widest text-muted-foreground">
-                        Suggested Page Blocks
+                        {project.pageBlocksEyebrow ?? "Project Overview"}
                       </p>
                       <h2 class="text-2xl font-medium tracking-tight text-foreground">
-                        Reusable Copy
+                        {project.pageBlocksHeading ?? "Summary and Highlights"}
                       </h2>
                     </div>
                     <div class="grid gap-4 md:grid-cols-2">
