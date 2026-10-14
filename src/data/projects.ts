@@ -551,8 +551,8 @@ export const projects: Project[] = [
   },
   {
     index: "05",
-    slug: "shutterstock-pond5-asset-review",
-    title: "Shutterstock / Pond5 Asset Review Platform",
+    slug: "global-stock-photography-provider",
+    title: "Global Stock Photography Provider",
     subtitle: "Modernized internal platform for digital asset review",
     description:
       "Led the modernization of an internal asset review platform used to evaluate submitted photography, video, music, and other digital creative assets.",
@@ -560,7 +560,7 @@ export const projects: Project[] = [
     externalUrl: "under-nda",
     referenceLabel: "Project under NDA",
     heroParagraphs: [
-      "Shutterstock and Pond5 operate digital content marketplaces where submitted photography, video, music, and other creative assets must be reviewed before becoming available to customers. The asset review platform provided an internal environment for evaluating submissions against quality, technical, licensing, and content requirements.",
+      "A global stock photography provider operates a digital content marketplace where submitted photography, video, music, and other creative assets must be reviewed before becoming available to customers. The asset review platform provided an internal environment for evaluating submissions against quality, technical, licensing, and content requirements.",
       "As Technical Lead / Lead Full-Stack Engineer, I led a team of five developers through the modernization of an existing legacy review tool, balancing preservation of critical business workflows with a more maintainable application architecture.",
     ],
     detailSections: [
@@ -880,7 +880,7 @@ export const projects: Project[] = [
 ];
 
 const featuredProjectOrder = [
-  "shutterstock-pond5-asset-review",
+  "global-stock-photography-provider",
   "twilio-studio",
   "ebay-storefront",
   "the-lean-way",
