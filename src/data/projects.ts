@@ -878,3 +878,24 @@ export const projects: Project[] = [
     ],
   },
 ];
+
+const featuredProjectOrder = [
+  "shutterstock-pond5-asset-review",
+  "twilio-studio",
+  "ebay-storefront",
+  "the-lean-way",
+];
+
+projects.sort((a, b) => {
+  const aPosition = featuredProjectOrder.indexOf(a.slug);
+  const bPosition = featuredProjectOrder.indexOf(b.slug);
+  const aRank = aPosition === -1 ? featuredProjectOrder.length : aPosition;
+  const bRank = bPosition === -1 ? featuredProjectOrder.length : bPosition;
+
+  if (aRank !== bRank) return aRank - bRank;
+  return Number(a.index) - Number(b.index);
+});
+
+projects.forEach((project, position) => {
+  project.index = String(position + 1).padStart(2, "0");
+});
